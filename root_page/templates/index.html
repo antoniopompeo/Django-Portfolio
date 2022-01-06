@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Antonio Pompeo</title>
+        <meta charset="utf-8">
+        <meta name="keywords" content="">
+        <meta name="description" content="im anronio pompeo and this is my protfolio in witch you can found projects about stock market bla bla (tiene que ser entre 70 y 140 caracteres)">
+        <meta name="author" content="antonio pompeo">
+        <meta name="copyright" content="facebook Inc.">
+        <meta name="robots" content="index">
+        <link rel="icon" href="pageIcon.ico"> <!--tiene que ser .ico-->
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Poppins:wght@800&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    </head>
+    <Body>
+        <div class="presentacion">
+            <div class="presentacion_contendor_textoYimagen">
+                <div class="presentacion_texto">
+                    <h1 class="presentacion_titulos">Hi, Im Antonio Pompeo</h1>
+                    <h2 class="presentacion_titulos">FullStack Developer</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Iure consequuntur cupiditate dolorum temporibus velit dignissimos, quam eius vero delectus reiciendis illo ipsam quo voluptatibus libero minima impedit voluptates? Fugiat, incidunt
+                    </p>
+                    <div class="presentacion_buttons">
+                        <a href="#projects" class="button_projects">Projects</a>
+                        <a href="#footer" class="button_contact">Contact</a>
+                        <a href="{% static 'cv.pdf' %}" target="_blank" class="button__resume">Resume</a>
+                    </div>
+                </div>
+                <div class="presentacion_animacion">
+                    <div class="container_skills">
+                            <div class="center_of_skills"><p>Skills</p></div>
+                            <div class="python"><p class="skill_text">Python</p></div>
+                            <div class="html"><p class="skill_text">HTML<br>CSS<br>JavaScript</p></div>
+                            <div class="sql"><p class="skill_text">SQL</p></div>
+                            <div class="c"><p class="skill_text">C/C++</p></div>
+                    </div>
+                </div>
+            </div>
+            <svg id="projects" class="svg_presentacion" viewBox="0 0 500 150" preserveAspectRatio="none"><path d="M0.28,150.48 C210.21,-47.86 284.71,-45.88 499.72,149.50 L500.00,150.00 L-0.27,150.48 Z"></path></svg>
+        </div>
+        <div class="encabezado_proyectos">
+            <h2>My Projects</h2>
+        </div>
+        <div class="container_proyectos">
+            {% for project in projects %}
+            <div class="proyecto">
+                <img src="{{project.image.url}}" alt="{{project.title}}">
+                <div class="proyecto_texto">
+                    <h4>{{project.title}}</h4>
+                    <p>{{project.description}}</p>
+                    <div class="links">
+                        {% if project.url_github %}
+                        <button class="link_source"><a href="{{project.url_github}}">Source</a></button>
+                        {% endif %}
+                        {% if project.url_colab %}
+                        <button class="link_colab"><a href="{{project.url_colab}}">Try it</a></button>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <svg class="svg_footer" preserveAspectRatio="none" viewBox="0 0 1680 39">
+            <defs>
+            <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="25%" style="stop-color:rgba(2,0,36,1);stop-opacity:1" />
+              <stop offset="100%" style="stop-color:rgba(50,5,92,1);stop-opacity:1" />
+            </linearGradient>
+            </defs>
+            <path d="M0 40h1680V30S1340 0 840 0 0 30 0 30z"></path>
+        </svg>
+        <footer id="footer">
+            <div class="container_contact_cards">
+                <a href="https://www.linkedin.com/in/antoniopompeo/" target="_blank" class="contact_card"><img src="{% static 'linkedin.png' %}">LinkedIn</a>
+                <a href="https://github.com/antoniopompeo" target="_blank" class="contact_card"><img src="{% static 'github.png' %}">GitHub</a>
+                <a href="mailto:pompeo.gabriel@outlook.com" target="_blank" class="contact_card"><img src="{% static 'email.png' %}">Email</a>
+                <a href="{% static 'cv.pdf' %}" target="_blank" class="contact_card"><img src="{% static 'resume.png' %}">Resume</a>
+            </div>
+        </footer>
+    </Body>
+</html>
+
+
