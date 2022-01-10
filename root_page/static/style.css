@@ -1,6 +1,22 @@
 
 
+:root{
+    --proyectos_backgorund: rgb(224, 224, 224);
+    
+    --center_size: 110px;
 
+    --python_size: 120px;
+    --python_distance: 160px;
+
+    --sql_size: 100px;
+    --sql_distance: 120px;
+
+    --c_size: 150px;
+    --c_distance: 150px;
+
+    --html_size: 135px;
+    --html_distance: 160px;
+}
 * {
     box-sizing: border-box;
     padding: 0px;
@@ -126,11 +142,11 @@ body {
     z-index: 100;
 }
 .svg_presentacion path{
-    fill: white;
+    fill: var(--proyectos_backgorund);
 }
 .svg_footer{
     display: block;
-    background-color: white;
+    background-color: var(--proyectos_backgorund);
 }
 .svg_footer path{
     fill: url(#grad1) /*para hacerle el gradiente lo tuve que definir en el html y 
@@ -141,7 +157,7 @@ body {
 
 
 .encabezado_proyectos{
-    background: white;
+    background: var(--proyectos_backgorund);
     position: relative;
     z-index: 100;
 }
@@ -150,7 +166,7 @@ body {
     font-family: 'Poppins', sans-serif;
     font-size: 1.5rem;
     font-weight: 600;
-    background: white;
+    background: var(--proyectos_backgorund);
 }
 .container_proyectos{
     display:flex;
@@ -161,7 +177,7 @@ body {
     align-content: center; /*es el justify content pero para cuando se bajan los contenedores a la linea de abajao, creo que por defecto es center*/
     gap: 3rem 1rem; /*separacion entre los proyecto*/
     padding: 1.2rem 1.5rem 2rem 1.5rem;
-    background: white;
+    background: var(--proyectos_backgorund);
     position: relative;
     z-index: 100;
 }
@@ -174,7 +190,7 @@ body {
     flex-basis: 20%;
 }
 .proyecto img{
-    width: 50%;
+    width: 100%;
     border-radius: 10%;
     user-select: none;
 }
@@ -292,21 +308,6 @@ body {
     to{
         transform: rotate(-360deg);
     }
-}
-:root{
-    --center_size: 110px;
-
-    --python_size: 120px;
-    --python_distance: 160px;
-
-    --sql_size: 100px;
-    --sql_distance: 120px;
-
-    --c_size: 150px;
-    --c_distance: 150px;
-
-    --html_size: 135px;
-    --html_distance: 160px;
 }
 .center_of_skills{
     width: var(--center_size);
