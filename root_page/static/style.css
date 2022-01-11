@@ -184,7 +184,7 @@ body {
 .proyecto{
     text-align: center;
     min-width: 220px;
-    /*max-width: 350px;
+    /* max-width: 350px;
     min-height: 450px;*/
     min-height: fit-content;
     flex-basis: 20%;
